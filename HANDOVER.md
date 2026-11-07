@@ -11,7 +11,10 @@ Upload approved, optimized image files to `public/images/` and update the matchi
 Keep descriptive alt text, compress images before upload, and use WebP or AVIF for photographs where supported. Do not use third-party venue logos without written permission.
 
 ## Website content
-Edit venue names, services, and contact email in `src/lib/site-content.ts`. Confirm venue spelling and permission before publishing.
+Edit venue names, services, contact email, public phone number, and WhatsApp link in `src/lib/site-content.ts`. Confirm venue spelling and permission before publishing.
+
+## Contact options
+The public contact section displays phone, WhatsApp, and email. The WhatsApp link uses the international-format number `92302973692`; the visible display number is `0302 9793692`.
 
 ## Deploy
 Vercel should be connected to the GitHub repository. Commits pushed to the production branch trigger deployments automatically.
