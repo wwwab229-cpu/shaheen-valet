@@ -997,3 +997,40 @@ body { font-size:16px; }
   .founder-principles strong,.founder-proof-stat strong { font-size:12px; }
   .founder-principles small,.founder-proof-stat small { font-size:11px; }
 }
+
+
+/* Authentic staff photographs in the current service locations section. */
+.venue-team-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 900px;
+  margin: 0 auto 54px;
+}
+.venue-team-photo {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+.venue-team-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+}
+.venue-team-photo figcaption {
+  padding: 13px 16px;
+  color: var(--muted-foreground);
+  font-size: 9px;
+  letter-spacing: .16em;
+}
+@media (max-width: 640px) {
+  .venue-team-gallery {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 38px;
+  }
+}
