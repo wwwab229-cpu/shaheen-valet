@@ -280,3 +280,4 @@ em { font-family: var(--font-editorial); font-weight: 400; }
 }
 @media(max-width:360px) { .hero-statement { font-size: 41px; } .hero-statement em { font-size: 51px; } .contact-title { font-size: 34px; } .contact-title em { font-size: 43px; } .email-link { font-size: 16px; } .footer-statement { font-size: 35px; } }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior: auto; } *,*::before,*::after { animation: none !important; transition: none !important; } .will-reveal { opacity: 1; transform: none; } }
+.brand-logo-slot{width:42px;height:42px;object-fit:contain;flex:0 0 42px;background:#f4f1e9;border:1px dashed var(--border);}
