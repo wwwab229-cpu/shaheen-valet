@@ -563,6 +563,7 @@ html { scroll-behavior:smooth; scroll-padding-top:88px; }
 .venue-card-top .venue-number { color:var(--accent);font-family:var(--font-editorial);font-size:20px; }
 .venue-card-top .venue-place { font-size:8px;letter-spacing:.17em;color:var(--muted-foreground); }
 .venue-card-name {
+  font-weight:400;
   position:relative;
   z-index:1;
   margin-block:22px 20px;
