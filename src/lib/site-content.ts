@@ -12,12 +12,12 @@ export const VENUES: Venue[] = [
   { name: "Tim Hotan" },
   { name: "Mondo Coffee Bar" },
   { name: "Lato Vita" },
-  { name: "Kabees Restorent" },
+  { name: "Kababjees" },
   { name: "LA Chine" },
   { name: "Elve8 Gym" },
   { name: "Build Fitness" },
   { name: "Menal Salon Studio" },
-  { name: "Majstec Banquet" },
+  { name: "Majestic Banquet" },
   { name: "The Vault" },
 ];
 
