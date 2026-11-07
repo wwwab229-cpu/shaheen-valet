@@ -20,8 +20,8 @@ export function Contact() {
           <p>For your venue. For your guests.<br />For a considered first impression.</p>
           <div className="contact-options" aria-label="Contact Shaheen Valet">
             <a className="contact-option whatsapp-option" href={CONTACT_WHATSAPP} target="_blank" rel="noreferrer"><span className="contact-option-icon"><MessageCircle /></span><span><strong>WhatsApp</strong><small>{CONTACT_PHONE_DISPLAY}</small></span></a>
-            <a className="contact-option" href={`tel:${CONTACT_PHONE_TEL}`}><span className="contact-option-icon"><Phone /></span><span><strong>Call us</strong><small>{CONTACT_PHONE_DISPLAY}</small></span><ArrowUpRight className="contact-option-arrow" /></a>
-            <a className="contact-option" href={`mailto:${CONTACT_EMAIL}`}><span className="contact-option-icon"><Mail /></span><span><strong>Email</strong><small>{CONTACT_EMAIL}</small></span><ArrowUpRight className="contact-option-arrow" /></a>
+            <a className="contact-option" href={`tel:${CONTACT_PHONE_TEL}`}><span className="contact-option-icon"><Phone /></span><span><strong>Call us</strong><small>{CONTACT_PHONE_DISPLAY}</small></span></a>
+            <a className="contact-option" href={`mailto:${CONTACT_EMAIL}`}><span className="contact-option-icon"><Mail /></span><span><strong>Email</strong><small>{CONTACT_EMAIL}</small></span></a>
           </div>
           <p className="contact-location">Karachi, Sindh, Pakistan</p>
         </div>
