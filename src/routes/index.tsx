@@ -1,0 +1,60 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useRef, useState } from "react";
+import { ArrowDown, ArrowDownRight, ArrowUpRight, Menu, Minus, Plus, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Contact } from "@/components/site/contact";
+const arrivalImage = "/images/hero-image-placeholder.svg";
+const handoverImage = "/images/founder-photo-placeholder.svg";
+const entranceImage = "/images/venue-experience-placeholder.svg";
+import { CONTACT_EMAIL, SERVICES, VENUES } from "@/lib/site-content";
+
+const TITLE = "Shaheen Valet — The Art of Arrival | Karachi";
+const DESCRIPTION = "Professional valet parking for hospitality, venues and events in Karachi. Shaheen Valet, founded by Asif with 15 years of experience in valet services.";
+export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [{ title: TITLE }, { name: "description", content: DESCRIPTION }, { property: "og:title", content: TITLE }, { property: "og:description", content: DESCRIPTION }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "LocalBusiness", name: "Shaheen Valet", alternateName: "Shaheen Valet Parking Services", email: CONTACT_EMAIL, founder: { "@type": "Person", name: "Asif" }, address: { "@type": "PostalAddress", addressLocality: "Karachi", addressRegion: "Sindh", addressCountry: "PK" }, areaServed: "Karachi" }) }],
+  }),
+  component: Index,
+});
+const NAV = [{ href: "#about", label: "Our perspective" }, { href: "#services", label: "Services" }, { href: "#venues", label: "Venue index" }, { href: "#process", label: "The experience" }];
+function Wordmark() {
+  return <a href="#top" className="wordmark" aria-label="Shaheen Valet — back to top"><img className="brand-logo-slot" src="/images/shaheen-valet-logo-placeholder.svg" alt="Shaheen Valet logo placeholder — upload approved logo here" /><span>SHAHEEN<span className="wordmark-sub">VALET</span></span></a>;
+}
+function Header() {
+  const [open, setOpen] = useState(false);
+  return <header className="site-header"><div className="header-inner"><Wordmark /><nav className="desktop-nav" aria-label="Main">{NAV.map(item => <a key={item.href} href={item.href}>{item.label}</a>)}</nav><Button asChild variant="editorial" className="header-contact"><a href="#contact">Let’s talk <ArrowUpRight /></a></Button><Button variant="ghost" size="icon" className="mobile-toggle" aria-label={open ? "Close menu" : "Open menu"} aria-controls="mobile-nav" aria-expanded={open} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</Button></div>{open && <nav id="mobile-nav" aria-label="Mobile" className="mobile-nav">{[...NAV, { href: "#contact", label: "Let’s talk" }].map(item => <a key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}<ArrowUpRight /></a>)}</nav>}</header>;
+}
+function Hero() {
+  return <section id="top" className="arrival-hero"><img src={arrivalImage} alt="Reserved image area — upload approved Shaheen Valet hero photograph" width={1920} height={1280} fetchPriority="high" className="hero-photo" /><div className="hero-shade" /><div className="hero-content page-shell"><div className="hero-meta"><span>THE FIRST IMPRESSION, CONSIDERED.</span><span>24°51′ N / 67°00′ E</span></div><h1>Shaheen Valet<span className="brand-period">.</span></h1><p className="hero-statement">The art of a<br /><em>seamless arrival.</em></p><div className="hero-bottom"><div><p>Professional valet parking for<br />hospitality, venues & events in Karachi.</p><Button asChild variant="editorial" className="hero-cta"><a href="#contact">Plan your arrival <ArrowUpRight /></a></Button></div><div className="hero-signature"><span>KARACHI, PAKISTAN</span><span>Founded by Asif · 15 years in valet services</span></div></div></div><a href="#about" className="hero-scroll" aria-label="Discover our perspective"><ArrowDown /></a><span className="hero-caption">01 — ARRIVAL / CONCEPT PHOTOGRAPHY</span></section>;
+}
+function About() {
+  return <section id="about" className="perspective-section"><div className="page-shell"><div className="section-label"><span>01 / OUR PERSPECTIVE</span><span>A SERVICE. AN IMPRESSION.</span></div><div className="perspective-intro reveal"><span className="editorial-arrow" aria-hidden="true"><ArrowDownRight /></span><h2>Hospitality begins<br />before <em>the door.</em></h2><p>A welcome isn’t just what happens inside.<br />It starts at the kerb. With a gesture.<br />With someone ready to receive you.</p></div><div className="founder-layout"><figure className="handover-figure reveal"><img src={handoverImage} width={1024} height={1280} loading="lazy" alt="Reserved founder portrait area — upload Founder Asif photograph here" /><figcaption>FOUNDER PROFILE / PORTRAIT TO BE ADDED</figcaption></figure><div className="founder-copy reveal"><span className="small-label">EXPERIENCE, PERSONALLY LED</span><h3>Good service is<br /><em>never incidental.</em></h3><p>Shaheen Valet is a Karachi-based valet service founded by Asif, whose 15 years of experience in valet services shape our approach to every entrance, every venue and every guest.</p><p>From understanding your entrance to planning the parking flow, we consider how valet can reflect the character of your venue.</p><a href="#services" className="text-link">A service shaped around you <ArrowUpRight /></a><div className="founder-signature"><span className="founder-number">15<span>years</span></span><span>Asif, Founder<br />Experience in valet services</span></div></div></div></div></section>;
+}
+function Services() {
+  const [active, setActive] = useState<number | null>(0);
+  return <section id="services" className="services-section"><div className="page-shell"><div className="section-label"><span>02 / OUR SERVICES</span><span>ONE APPROACH. MANY SETTINGS.</span></div><div className="services-heading reveal"><h2>Every setting.<br /><em>A considered arrival.</em></h2><p>Different venues. Different rhythms.<br />Valet arrangements discussed and<br />tailored to your space in Karachi.</p></div><div className="service-list">{SERVICES.map((service, index) => <div className={`service-row ${active === index ? "is-active" : ""}`} key={service.title}><h3><Button variant="ghost" className="service-toggle" onClick={() => setActive(active === index ? null : index)} aria-expanded={active === index} aria-controls={`service-${index}`}><span className="service-number">0{index + 1}</span><span className="service-name">{service.title}</span><span className="service-indicator">{active === index ? <Minus /> : <Plus />}</span></Button></h3><div id={`service-${index}`} className="service-description" hidden={active !== index}><p>{service.body}</p><a href="#contact" className="text-link">Discuss this service <ArrowUpRight /></a></div></div>)}</div></div></section>;
+}
+function Venues() {
+  return <section id="venues" className="venues-section"><div className="page-shell"><div className="section-label"><span>03 / THE VENUE INDEX</span><span>KARACHI, THROUGH OUR LENS</span></div><div className="venue-heading reveal"><h2>Part of<br /><em>the city’s rhythm.</em></h2><div><p>Cafés. Dining rooms. Fitness spaces.<br />Salons. Celebrations.</p><p className="venue-note">Venues served in Karachi. Names for reference only;<br />no endorsement is implied.</p></div></div><ol className="venue-index">{VENUES.map((venue, index) => <li key={venue.name} className="reveal"><span className="venue-number">{String(index + 1).padStart(2, "0")}</span><span className="venue-name">{venue.name}</span><span className="venue-place">KHI</span></li>)}</ol><a href="#contact" className="venue-invitation">A place for your venue, too.<ArrowUpRight /></a></div></section>;
+}
+const STEPS = [{ title: "A conversation.", body: "Tell us about your venue or event, guest numbers and timings." }, { title: "A closer look.", body: "We discuss your entrance, available parking and the way guests arrive." }, { title: "A considered plan.", body: "A proposed arrangement for the team, parking and guest flow." }, { title: "The welcome.", body: "On-site valet service, with a courteous approach from arrival to departure." }];
+function Experience() {
+  const [active, setActive] = useState(0);
+  const step = STEPS[active];
+  return <section id="process" className="experience-section"><div className="experience-photo"><img src={entranceImage} width={1920} height={1280} loading="lazy" alt="Reserved venue experience image area — upload approved venue photograph" /><span>VENUE EXPERIENCE / PHOTOGRAPH TO BE ADDED</span></div><div className="experience-content page-shell"><div className="section-label"><span>04 / THE EXPERIENCE</span><span>FROM FIRST HELLO TO FINAL HANDOVER</span></div><div className="experience-layout"><h2>A smooth arrival.<br /><em>Starts long before.</em></h2><div className="experience-story"><div className="process-tabs" role="tablist" aria-label="Working together">{STEPS.map((item, index) => <Button key={item.title} variant="ghost" role="tab" aria-label={`Step ${index + 1}: ${item.title}`} aria-selected={active === index} aria-controls="process-panel" id={`process-tab-${index}`} className={active === index ? "process-tab selected" : "process-tab"} onClick={() => setActive(index)} onKeyDown={event => { if (event.key === "ArrowRight" || event.key === "ArrowLeft") { event.preventDefault(); const next = (active + (event.key === "ArrowRight" ? 1 : 3)) % 4; setActive(next); document.getElementById(`process-tab-${next}`)?.focus(); } }}>0{index + 1}</Button>)}</div><div id="process-panel" role="tabpanel" aria-labelledby={`process-tab-${active}`} className="process-panel" key={active}><h3>{step?.title}</h3><p>{step?.body}</p><span className="small-label">A PROPOSED APPROACH, ADAPTED TO YOUR VENUE.</span></div></div></div></div></section>;
+}
+function Footer() {
+  return <footer className="site-footer"><div className="page-shell"><div className="footer-top"><Wordmark /><a href="#top" className="text-link">Back to the beginning <ArrowUpRight /></a></div><div className="footer-statement" aria-hidden="true">A warm welcome<span>starts here.</span></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Shaheen Valet</span><span>Karachi, Sindh, Pakistan</span><span>Photography and brand assets to be supplied by Shaheen Valet.</span></div></div></footer>;
+}
+function Index() {
+  const root = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const elements = root.current?.querySelectorAll(".reveal");
+    if (!elements || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add("revealed"); observer.unobserve(entry.target); } }), { threshold: 0.08 });
+    elements.forEach(element => { element.classList.add("will-reveal"); observer.observe(element); });
+    return () => observer.disconnect();
+  }, []);
+  return <div ref={root}><a href="#main" className="skip-link">Skip to content</a><Header /><main id="main"><Hero /><About /><Services /><Venues /><Experience /><Contact /></main><Footer /></div>;
+}
