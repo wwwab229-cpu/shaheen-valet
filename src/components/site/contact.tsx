@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Mail, MessageCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CONTACT_EMAIL, SERVICE_OPTIONS } from "@/lib/site-content";
+import { CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_TEL, CONTACT_WHATSAPP, SERVICE_OPTIONS } from "@/lib/site-content";
 import { createEnquiryMailto } from "@/lib/enquiry";
 
 export function Contact() {
@@ -16,7 +16,15 @@ export function Contact() {
       <div className="section-label"><span>05 / LET’S TALK</span><span>KARACHI, PAKISTAN</span></div>
       <h2 className="contact-title">Your next arrival.<br /><em>Our first conversation.</em></h2>
       <div className="contact-layout">
-        <div className="contact-details"><p>For your venue. For your guests.<br />For a considered first impression.</p><a className="email-link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}<ArrowUpRight aria-hidden="true" /></a><p className="contact-location">Karachi, Sindh, Pakistan</p></div>
+        <div className="contact-details">
+          <p>For your venue. For your guests.<br />For a considered first impression.</p>
+          <div className="contact-options" aria-label="Contact Shaheen Valet">
+            <a className="contact-option whatsapp-option" href={CONTACT_WHATSAPP} target="_blank" rel="noreferrer"><span className="contact-option-icon"><MessageCircle /></span><span><strong>WhatsApp</strong><small>{CONTACT_PHONE_DISPLAY}</small></span><ArrowUpRight className="contact-option-arrow" /></a>
+            <a className="contact-option" href={`tel:${CONTACT_PHONE_TEL}`}><span className="contact-option-icon"><Phone /></span><span><strong>Call us</strong><small>{CONTACT_PHONE_DISPLAY}</small></span><ArrowUpRight className="contact-option-arrow" /></a>
+            <a className="contact-option" href={`mailto:${CONTACT_EMAIL}`}><span className="contact-option-icon"><Mail /></span><span><strong>Email</strong><small>{CONTACT_EMAIL}</small></span><ArrowUpRight className="contact-option-arrow" /></a>
+          </div>
+          <p className="contact-location">Karachi, Sindh, Pakistan</p>
+        </div>
         <form onSubmit={onSubmit} aria-describedby="form-note" className="enquiry-form">
           <div className="form-grid">
             <label>Your name *<input name="name" required maxLength={100} autoComplete="name" /></label>
