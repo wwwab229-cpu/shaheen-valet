@@ -909,3 +909,32 @@ html { scroll-behavior:smooth; scroll-padding-top:88px; }
   color: #fff !important;
   stroke: #fff !important;
 }
+
+
+/* Founder proof points: present experience and team scale as a balanced pair. */
+.founder-proof-stats {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(18px,3vw,34px);
+  margin-top:34px;
+  padding:24px 0 0;
+  border-top:1px solid var(--border);
+}
+.founder-proof-stat {
+  display:flex;
+  align-items:center;
+  gap:16px;
+  min-width:0;
+}
+.founder-proof-stat .founder-number { flex:0 0 auto; font-size:clamp(42px,5vw,62px); }
+.founder-proof-stat .founder-number span { font-size:.42em; }
+.founder-proof-stat > span:last-child { display:grid; gap:5px; }
+.founder-proof-stat strong { font-size:12px; line-height:1.4; }
+.founder-proof-stat small { color:var(--muted-foreground); font-size:10px; line-height:1.5; }
+@media(max-width:560px) {
+  .founder-proof-stats { gap:12px; padding-top:19px; }
+  .founder-proof-stat { align-items:flex-start; flex-direction:column; gap:7px; }
+  .founder-proof-stat .founder-number { font-size:48px; }
+  .founder-proof-stat strong { font-size:11px; }
+  .founder-proof-stat small { font-size:9px; }
+}
