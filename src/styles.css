@@ -885,3 +885,20 @@ html { scroll-behavior:smooth; scroll-padding-top:88px; }
  .venue-card:nth-child(2n) { transition-delay:.04s; }
  .venue-card:nth-child(3n) { transition-delay:.08s; }
 }
+
+
+/* Contrast correction: services section uses the light ivory surface, so all copy must be dark. */
+.services-section { color:var(--foreground) !important; background:var(--secondary) !important; }
+.services-section .section-label { color:var(--muted-foreground) !important; border-color:var(--border) !important; }
+.services-section .services-heading h2,
+.services-section .services-heading p { color:var(--foreground) !important; }
+.services-section .services-heading h2 em { color:color-mix(in oklab,var(--accent) 76%,var(--foreground)) !important; }
+.services-section .service-row { border-color:var(--border) !important; }
+.services-section .service-toggle,
+.services-section .service-toggle:hover,
+.services-section .service-toggle:focus-visible { color:var(--foreground) !important; }
+.services-section .service-number { color:color-mix(in oklab,var(--accent) 82%,var(--foreground)) !important; }
+.services-section .service-description p { color:var(--muted-foreground) !important; }
+.services-section .service-description .text-link { color:var(--foreground) !important; }
+.services-section .service-indicator { color:var(--foreground); border-color:color-mix(in oklab,var(--accent) 60%,var(--border)); }
+.services-section .service-row.is-active .service-indicator { background:var(--primary); color:var(--primary-foreground); border-color:var(--primary); }
