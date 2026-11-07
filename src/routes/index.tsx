@@ -50,7 +50,7 @@ function Footer() {
 function Index() {
   const root = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const elements = root.current?.querySelectorAll(".reveal");
+    const elements = root.current?.querySelectorAll(".reveal, .section-label, .service-row, .venue-index li, .contact-option, .process-panel");
     if (!elements || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add("revealed"); observer.unobserve(entry.target); } }), { threshold: 0.08 });
     elements.forEach(element => { element.classList.add("will-reveal"); observer.observe(element); });
