@@ -902,3 +902,10 @@ html { scroll-behavior:smooth; scroll-padding-top:88px; }
 .services-section .service-description .text-link { color:var(--foreground) !important; }
 .services-section .service-indicator { color:var(--foreground); border-color:color-mix(in oklab,var(--accent) 60%,var(--border)); }
 .services-section .service-row.is-active .service-indicator { background:var(--primary); color:var(--primary-foreground); border-color:var(--primary); }
+
+
+/* Keep the Our Services accordion plus/minus icons white for clear visibility. */
+.services-section .service-indicator svg {
+  color: #fff !important;
+  stroke: #fff !important;
+}
