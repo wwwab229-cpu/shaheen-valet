@@ -938,3 +938,62 @@ html { scroll-behavior:smooth; scroll-padding-top:88px; }
   .founder-proof-stat strong { font-size:11px; }
   .founder-proof-stat small { font-size:9px; }
 }
+
+
+/* Readability pass: strengthen text contrast and gently increase body-copy sizing. */
+:root {
+  --muted-foreground: oklch(0.34 0.018 263);
+  --dark-muted: oklch(0.82 0.012 260);
+}
+body { font-size:16px; }
+.desktop-nav { font-size:13px; font-weight:500; }
+.section-label { font-size:11px; color:var(--foreground); }
+.small-label,
+.founder-kicker,
+.founder-role,
+.founder-index { font-size:11px; color:var(--foreground); }
+.perspective-intro p,
+.founder-copy p,
+.venue-heading p,
+.services-heading p,
+.service-description p,
+.process-panel p { font-size:15px; line-height:1.85; }
+.founder-principles small,
+.founder-proof-stat small,
+.venue-heading .venue-note,
+.venue-number,
+.venue-card-bottom,
+.form-note { color:var(--muted-foreground); }
+.founder-principles strong,
+.founder-proof-stat strong { font-size:13px; }
+.venue-card-top .venue-place { color:var(--foreground); }
+.venue-card-bottom { font-size:9px; }
+.venue-service-status { font-size:8px; }
+.form-grid label,
+.enquiry-form label { font-size:12px; color:var(--foreground); }
+.form-grid input,.form-grid select,.form-grid textarea,
+.enquiry-form input,.enquiry-form select,.enquiry-form textarea { font-size:15px; }
+.contact-location { font-size:12px; }
+.contact-option small { color:var(--dark-muted); }
+.experience-section .section-label,
+.experience-section .process-panel .small-label { color:var(--dark-muted); }
+.experience-section .process-panel p { color:var(--dark-muted); }
+.site-footer .footer-bottom { color:var(--dark-muted); }
+@media(max-width:680px) {
+  body { font-size:15px; }
+  .section-label { font-size:9px; }
+  .perspective-intro p,
+  .founder-copy p,
+  .services-heading p,
+  .service-description p,
+  .venue-heading p,
+  .process-panel p { font-size:14px; line-height:1.8; }
+  .service-name { font-size:19px; }
+  .venue-card-name { font-size:20px; }
+  .venue-card-bottom { font-size:7px; }
+  .form-grid label,.enquiry-form label { font-size:12px; }
+  .form-grid input,.form-grid select,.form-grid textarea,
+  .enquiry-form input,.enquiry-form select,.enquiry-form textarea { font-size:16px; }
+  .founder-principles strong,.founder-proof-stat strong { font-size:12px; }
+  .founder-principles small,.founder-proof-stat small { font-size:11px; }
+}
