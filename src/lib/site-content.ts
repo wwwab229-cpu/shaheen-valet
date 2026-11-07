@@ -1,6 +1,9 @@
 // Central content for the Shaheen Valet site. Update venue spellings or add
 // `logo` image paths here after client confirmation.
 export const CONTACT_EMAIL = "Shaheenvalet@gmail.com";
+export const CONTACT_PHONE_DISPLAY = "0302 9793692";
+export const CONTACT_PHONE_TEL = "+92302973692";
+export const CONTACT_WHATSAPP = "https://wa.me/92302973692";
 
 export type Venue = { name: string; logo?: string };
 
