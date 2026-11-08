@@ -1256,3 +1256,37 @@ section[id]{scroll-margin-top:88px}
     font-size: 14px;
   }
 }
+
+
+/* Clear, professional AMM Data Solutions footer attribution. */
+.footer-agency-credit {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  color: var(--primary-foreground);
+  font-size: 11px;
+  font-weight: 500;
+}
+.footer-agency-credit a {
+  color: var(--accent);
+  font-weight: 750;
+  letter-spacing: .025em;
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in oklab, var(--accent) 70%, transparent);
+  padding-bottom: 2px;
+  transition: color .2s ease, border-color .2s ease;
+}
+.footer-agency-credit a:hover {
+  color: var(--primary-foreground);
+  border-color: var(--primary-foreground);
+}
+.footer-agency-credit a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+@media (max-width: 680px) {
+  .footer-bottom { align-items: flex-start; }
+  .footer-agency-credit { flex-basis: 100%; font-size: 11px; }
+}
