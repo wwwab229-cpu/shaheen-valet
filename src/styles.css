@@ -1055,3 +1055,11 @@ body { font-size:16px; }
 @keyframes founder-name-type { to { clip-path:inset(0 0 0 0); } }
 @keyframes founder-caret { 50% { border-color:transparent; } }
 @media(prefers-reduced-motion:reduce) { .founder-typed-name { clip-path:none; border-right:0; animation:none; } }
+
+
+/* Final polish: stop the founder typewriter cursor and enlarge the team counters. */
+.founder-typed-name { border-right:0 !important; animation:founder-name-type 1.9s steps(14,end) .25s forwards !important; padding-right:0; }
+.experience-proof-grid strong { font-size:clamp(38px,5.2vw,60px) !important; line-height:1; }
+.experience-proof-grid strong span { font-size:.52em; vertical-align:baseline; }
+.founder-proof-stat .founder-number { font-size:clamp(64px,7vw,88px) !important; line-height:.95; }
+@media(max-width:560px) { .founder-proof-stat .founder-number { font-size:64px !important; } }
