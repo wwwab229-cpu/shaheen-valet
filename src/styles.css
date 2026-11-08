@@ -1223,3 +1223,36 @@ section[id]{scroll-margin-top:88px}
     font-size: 16.5px;
   }
 }
+
+
+/* Venue enquiry CTA: compact pill treatment, consistent on desktop and mobile. */
+.venue-invitation {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+  padding: 17px 28px;
+  gap: 12px;
+  font-weight: 650;
+  line-height: 1.35;
+  text-align: center;
+  transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease;
+}
+.venue-invitation:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0,0,0,.14);
+}
+.venue-invitation:focus-visible {
+  outline: 3px solid var(--foreground);
+  outline-offset: 4px;
+}
+@media (max-width: 680px) {
+  .venue-invitation {
+    width: fit-content;
+    max-width: 100%;
+    padding: 15px 22px;
+    font-size: 14px;
+  }
+}
