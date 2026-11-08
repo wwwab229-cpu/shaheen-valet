@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")({
 });
 const NAV = [{ href: "#about", label: "Our perspective" }, { href: "#services", label: "Services" }, { href: "#venues", label: "Venue index" }, { href: "#process", label: "The experience" }];
 function Wordmark() {
-  return <a href="#top" className="wordmark" aria-label="Shaheen Valet — back to top"><img className="brand-logo-slot" src="/images/shaheen-valet-logo-placeholder.svg" alt="Shaheen Valet logo placeholder — upload approved logo here" /><span>SHAHEEN<span className="wordmark-sub">VALET</span></span></a>;
+  return <a href="#top" className="wordmark" aria-label="Shaheen Valet — back to top"><img className="brand-logo-slot" src="/images/Meta_AI_shaheen_valet_logo_transparent_20261107_183412.png" alt="Shaheen Valet Parking Services official eagle logo" /><span>SHAHEEN<span className="wordmark-sub">VALET</span></span></a>;
 }
 function Header() {
   const [open, setOpen] = useState(false);
