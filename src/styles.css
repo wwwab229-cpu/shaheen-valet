@@ -1048,3 +1048,10 @@ body { font-size:16px; }
 .experience-proof-grid strong span { color:var(--accent); }
 .experience-proof-grid > div > span { color:var(--dark-muted); font-size:9px; letter-spacing:.12em; line-height:1.5; }
 @media(max-width:700px) { .experience-proof-heading { display:block; } .experience-proof-heading p { margin-top:12px; } .experience-proof-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .experience-proof-grid > div:nth-child(3) { border-left:0; padding-left:0; } .experience-proof-grid > div:nth-child(n+3) { border-top:1px solid var(--dark-line); padding-top:20px; } }
+
+
+/* Founder name typewriter and staff count-up effects. */
+.founder-typed-name { display:inline-block; white-space:nowrap; clip-path:inset(0 100% 0 0); border-right:2px solid currentColor; padding-right:.08em; animation:founder-name-type 1.9s steps(14,end) .25s forwards, founder-caret .75s step-end 2.15s infinite; }
+@keyframes founder-name-type { to { clip-path:inset(0 0 0 0); } }
+@keyframes founder-caret { 50% { border-color:transparent; } }
+@media(prefers-reduced-motion:reduce) { .founder-typed-name { clip-path:none; border-right:0; animation:none; } }
