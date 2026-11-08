@@ -1142,3 +1142,16 @@ section[id]{scroll-margin-top:88px}
  .footer-top .text-link{max-width:100%}
 }
 @media(max-height:560px) and (min-width:681px){.arrival-hero{height:auto;min-height:620px}.hero-content{min-height:620px}}
+
+
+/* Keep the animated 100 numerals the same display size as the 15-year figure. */
+.founder-proof-stat .founder-number > span:first-child {
+  font-size:inherit !important;
+  font-family:var(--font-display);
+  line-height:1;
+  margin:0;
+}
+.founder-proof-stat .founder-number > span:last-child {
+  font-size:.42em;
+  margin-left:8px;
+}
