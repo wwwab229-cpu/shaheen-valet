@@ -1258,49 +1258,49 @@ section[id]{scroll-margin-top:88px}
 }
 
 
-/* Prominent, compact AMM Data Solutions footer partnership credit. */
+/* Simple text-only footer credit for AMM Data Solutions. */
 .footer-agency-credit {
   display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  flex-wrap: wrap;
+  align-items: baseline;
   gap: 5px;
-  color: var(--primary-foreground);
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--dark-muted);
   font-size: 11px;
   font-weight: 500;
-  padding: 10px 15px;
-  border: 1px solid color-mix(in oklab, var(--accent) 48%, transparent);
-  border-radius: 13px;
-  background: color-mix(in oklab, var(--accent) 8%, transparent);
-}
-.footer-agency-label {
-  color: var(--dark-muted);
-  font-size: 8px;
-  font-weight: 750;
-  letter-spacing: .14em;
+  line-height: 1.6;
 }
 .footer-agency-credit a {
   display: inline-flex;
-  align-items: center;
-  gap: 7px;
+  align-items: baseline;
+  gap: 5px;
   color: var(--accent);
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: .015em;
+  font-size: 12px;
+  font-weight: 700;
   text-decoration: none;
-  transition: color .2s ease, transform .2s ease;
+  transition: color .2s ease;
 }
 .footer-agency-credit a:hover {
   color: var(--primary-foreground);
-  transform: translateY(-1px);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .footer-agency-credit a:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
-  border-radius: 3px;
+  border-radius: 2px;
+}
+.footer-agency-credit a span {
+  display: inline-block;
+  font-size: .95em;
+  line-height: 1;
 }
 @media (max-width: 680px) {
   .footer-bottom { align-items: flex-start; }
-  .footer-agency-credit { flex-basis: 100%; font-size: 11px; }
-  .footer-agency-credit a { font-size: 14px; }
+  .footer-agency-credit { flex-basis: auto; font-size: 11px; }
+  .footer-agency-credit a { font-size: 12px; }
 }
