@@ -1155,3 +1155,20 @@ section[id]{scroll-margin-top:88px}
   font-size:.42em;
   margin-left:8px;
 }
+
+
+/* Footer-area team count: match surrounding footer copy size and keep the full count white. */
+.experience-proof-grid strong {
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  color: #fff !important;
+  font-weight: 500 !important;
+}
+.experience-proof-grid strong > span:first-child,
+.experience-proof-grid strong > span:last-child,
+.experience-proof-grid strong span {
+  color: #fff !important;
+  font-size: inherit !important;
+  font-family: var(--font-sans) !important;
+  line-height: inherit !important;
+}
