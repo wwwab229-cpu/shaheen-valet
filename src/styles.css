@@ -1172,3 +1172,54 @@ section[id]{scroll-margin-top:88px}
   font-family: var(--font-sans) !important;
   line-height: inherit !important;
 }
+
+
+/* Improve readability of founder profile and supporting editorial copy. */
+.founder-copy > p:not(.founder-lead),
+.perspective-intro > p,
+.services-heading > p,
+.venue-heading > div > p,
+.service-description > p,
+.process-panel > p {
+  font-size: 16.5px;
+  line-height: 1.85;
+  font-weight: 500;
+  color: var(--foreground);
+}
+.founder-copy > .founder-lead {
+  font-size: 18px;
+  line-height: 1.7;
+  font-weight: 600;
+  color: var(--foreground);
+}
+.founder-principles strong,
+.founder-proof-stat strong {
+  font-size: 14px;
+  font-weight: 650;
+  color: var(--foreground);
+}
+.founder-principles small,
+.founder-proof-stat small {
+  font-size: 12.5px;
+  line-height: 1.65;
+  font-weight: 500;
+  color: var(--muted-foreground);
+}
+.venue-heading .venue-note {
+  font-weight: 600;
+  color: var(--foreground);
+}
+@media (max-width: 680px) {
+  .founder-copy > p:not(.founder-lead),
+  .perspective-intro > p,
+  .services-heading > p,
+  .venue-heading > div > p,
+  .service-description > p,
+  .process-panel > p {
+    font-size: 15.5px;
+    line-height: 1.8;
+  }
+  .founder-copy > .founder-lead {
+    font-size: 16.5px;
+  }
+}
